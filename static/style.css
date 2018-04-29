@@ -1,3 +1,7 @@
+body {
+    text-align: center;
+}
+
 .form__text {
     width: 70%;
 }
