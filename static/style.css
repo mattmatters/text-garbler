@@ -27,3 +27,7 @@ body {
 .form__submit {
 
 }
+
+img {
+    border-radius: 1em;
+}
