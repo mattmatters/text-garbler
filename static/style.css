@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Open+Sans');
+
 html {
     background-color: #fffff0;
 }
 
 h1, h2, h3, h4, li, p, li {
     color: #30363a;
+}
+
+h1, h2 {
+    font-family: 'Bowlby One SC', cursive;
+}
+
+h3, h4, p, li {
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
