@@ -13,17 +13,30 @@
         <meta property="twitter:title" content="Text Garbler" />
         <meta property="twitter:description" content="The most useless internet api" />
         <meta name="application-name" content="Text Garbler">
-        <link rel="stylesheet" type="text/css" href="static/style.css">
+        <link rel="icon" type="image/png" href="/favicon.png">
+        <link rel="stylesheet" type="text/css" href="/static/style.css">
     </head>
     <body>
         <h1>The Text Garbler</h1>
         <img src="static/garbler.jpg" />
-        <form action="/api.php" method="get">
-            <input class="form__text" type="text" name="text" placeholder="Input some text here to garble" />
+        <form action="/api.php" id="form" method="get">
+            <input class="form__text" id="text" type="text" name="text" placeholder="Input some text here to garble" />
             <input class="form__submit" type="submit" text="Go!" />
         </form>
+        <p id="res_text" />
         <footer>
             Created by <a href="https://mattmatters.io">Matt Lewis</a>
         </footer>
     </body>
+    <script>
+     document.getElementById("form").addEventListener('submit', function(e) {
+         e.preventDefault()
+         const text = encodeURIComponent(document.getElementById("text").value);
+         const url =`/api.php?text=${text}`
+         fetch(url).then((resp) => {
+             const resText = resp.body;
+             document.getElementById('res_text').innerHTML = resText;
+         });
+     });
+    </script>
 </html>
