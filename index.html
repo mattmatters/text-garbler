@@ -33,10 +33,10 @@
          e.preventDefault()
          const text = encodeURIComponent(document.getElementById("text").value);
          const url =`/api.php?text=${text}`
-         fetch(url).then((resp) => {
-             const resText = resp.body;
-             document.getElementById('res_text').innerHTML = resText;
-         });
+         fetch(url).then(res => res.text())
+                   .then((text) => {
+                       document.getElementById('res_text').innerHTML = text;
+                   });
      });
     </script>
 </html>
